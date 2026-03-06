@@ -32,7 +32,7 @@ export default defineConfig({
 			},
 			sidebar: [
 				{ label: "Introduction", autogenerate: { directory: "introduction" } },
-				{ label: "Guides", autogenerate: { directory: "guides" } },
+				{ label: "Information", autogenerate: { directory: "info" } },
 				{ label: "Reference", autogenerate: { directory: "reference" } },
 			],
 			customCss: ["./src/styles/global.css"],

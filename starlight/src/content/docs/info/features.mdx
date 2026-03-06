@@ -1,0 +1,31 @@
+---
+title: Features
+description: Exploring what makes Recar different from the official Discord client.
+---
+
+Recar is designed to bridge the gap between a standard web-based Discord client and a native Linux application. Here are some of its core features.
+
+### Screen Sharing Improvements
+
+Recar includes robust support for screen sharing on Wayland and X11, with audio.
+
+<video controls muted autoplay loop src="../../src/assets/media/screenshare.webm"></video>
+> *Screensharing on Wayland, in KDE Plasma*
+Demonstrated in the video is:
+1. Framerate & Resolution controls
+2. Selecting one, or multiple sources of audio, or just your entire computer
+3. Switch your source for streaming easily
+4. Options to prefer high clarity, or smoothness. Generally, Prefer Smoothness is recommended (and is the default because of this) as 99% of use cases will warrant this. Prefer Clarity has a huge hit on framerate but has exceptional bitrate.
+
+Recar implements the [venmic](https://github.com/Vencord/venmic) project, noteably used in Vesktop for audio streaming.
+
+### Built-in arRPC (Discord Rich Presence)
+
+Recar includes the [arRPC](https://arrpc.openasar.dev/) project directly in the client, meaning you can immediately start using Discord RPC.
+
+### Custom Ringing Popup
+
+Recar features a specialized "ringing" window that appears when you receive a call. It is styled to be similar to Discord's default UI and uses the color theme you use on your Discord.
+
+<video controls muted autoplay loop src="../../src/assets/media/callwindow.webm"></video>
+> *Recar call window changes theme based on Discord theme (old version)*

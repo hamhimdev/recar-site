@@ -19,6 +19,10 @@
   transition: all 0.1s ease-in-out;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root,
 [data-theme="dark"] {
 	--recar-base: #0f1012;
@@ -130,7 +134,6 @@
 
 header {
 	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
 	background: color-mix(in srgb, var(--recar-base) 60%, transparent) !important;
 	border-bottom: 1px solid var(--recar-border);
 }
@@ -162,13 +165,21 @@ header {
 
 h1,
 h2,
-h3 {
+h3,
+summary {
 	font-family: "Figtree", sans-serif;
 	color: var(--recar-primary);
 	font-weight: 700;
 }
 
-p,
-a {
-	font-size: 16px;
+p, ul, li, summary span, a {
+	font-size: 18px;
+}
+
+.sidebar-content a {
+  font-size: 16px;
+}
+
+video {
+  border-radius: 4px;
 }

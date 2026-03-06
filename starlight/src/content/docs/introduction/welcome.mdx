@@ -5,14 +5,22 @@ description: Welcome to the Recar documentation site.
 
 import { LinkButton } from '@astrojs/starlight/components';
 
-<img src="/docs/src/assets/recar.svg"></img>
+<img src="/docs/src/assets/recar.svg" alt="Recar Logo"></img>
 
-Welcome to the Recar documentation. This site covers topics you may want to know about Recar such as installing it or Recar Settings.
+<p style="text-align: center;">Recar is a Linux-first Discord client built for performance, customizability, and deep system integration. It comes pre-packaged with client mods like Vencord and Equicord, along with additional Recar specific features.</p>
 
-import { LinkCard } from '@astrojs/starlight/components';
 
-<LinkCard
-  title="Install Recar"
-  href="/docs/guides/install/"
-  description="Installing Recar to your computer."
-/>
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <LinkCard
+    title="Installation"
+    href="/docs/info/install/"
+    description="Get Recar running on your favorite distro."
+  />
+  <LinkCard
+    title="Features"
+    href="/docs/info/features/"
+    description="Explore what makes Recar different."
+  />
+</CardGrid>

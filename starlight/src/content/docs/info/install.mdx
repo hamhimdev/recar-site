@@ -1,0 +1,104 @@
+---
+title: Install Recar
+description: Installing Recar to your computer.
+---
+
+import { Tabs, TabItem, Aside, Steps, Code } from "@astrojs/starlight/components";
+
+Recar can be installed via several methods depending on your Linux distribution and preference.
+
+#### Prepackaged Binaries
+
+##### Debian, Ubuntu and their derivatives (eg; Linux Mint)
+
+Debian based distribution can install Recar from the provided `.deb` file.
+
+TODO, ADD RPM TARBALL AND STUFF TOO LAZY RN, OH AND ALSO LINKS TO THE DOWNLOADS RIGHT
+
+#### Using Nix
+
+<Aside>The Nix version of recar still has some issues, such as wrong reporting of versions. It should be fine for daily use though!</Aside>
+
+##### Nix
+
+If you're just using the Nix package manager (not NixOS), use alternative methods for installation if possible.
+
+For Nix users who prefer the flake approach:
+
+<Tabs>
+	<TabItem label="Install to your profile">
+    ```bash
+    nix profile install github:hamhimdev/recar/main
+    ```
+    </TabItem>
+    <TabItem label="Run without installing">
+    ```bash
+    nix run github:hamhimdev/recar/main
+    ```
+    </TabItem>
+</Tabs>
+
+##### NixOS
+
+A flake is provided that you can use to install the program on NixOS systems.
+Optionally, you can also add the system package directly in your configuration.nix. To do so you will need to define the pixelfix input in the file parameters.
+
+import flake from './assets/flake.nix?raw';
+
+export const flakefocus = [
+	"recar",
+	"git+https://codeberg.org/hamhim/recar/main",
+	'recar.url = "github:hamhimdev/recar/main";',
+	"recar.packages.x86_64-linux.default",
+];
+
+import configuration1 from './assets/configuration1.nix?raw';
+import configuration2 from './assets/configuration2.nix?raw';
+import configuration3 from './assets/configuration3.nix?raw';
+
+<Tabs>
+	<TabItem label="With flake.nix">
+		<Code code={flake} lang="nix" title="flake.nix" mark={flakefocus} wrap="true" />
+	</TabItem>
+    <TabItem label="With configuration.nix">
+		On the top:
+		<Code code={configuration1} lang="nix" title="configuration.nix" wrap="true" />
+		And then recar to your packages:
+		<Code code={configuration2} lang="nix" title="configuration.nix" wrap="true" />
+		Then expose the recar flake to your configuration.nix:
+		<Code code={configuration3} lang="nix" title="flake.nix" wrap="true" />
+	</TabItem>
+</Tabs>
+
+### Building from Source
+
+To build Recar from source, you'll need `nodejs`, `pnpm`, and `git`.
+
+<Steps>
+
+1. **Clone the repository**:
+
+    `--recursive` is very important as Equicord and Vencord is installed as Git submodules.
+
+    ```bash
+    git clone --recursive https://codeberg.org/hamhim/recar.git
+    cd recar
+    ```
+
+2. **Install dependencies**:
+
+    ```bash
+    pnpm install
+    ```
+
+3. **Build client mods**:
+
+    ```bash
+    pnpm build:mods
+    ```
+
+4. **Launch Recar**:
+    ```bash
+    pnpm start
+    ```
+</Steps>

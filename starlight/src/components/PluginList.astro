@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+const allDocs = await getCollection('docs');
+
+const plugins = allDocs.filter(entry => 
+  entry.id.startsWith('info/plugins/') && !entry.id.endsWith('index.md') && !entry.id.endsWith('index.mdx')
+);
+---
+
+<CardGrid>
+  {plugins.map((plugin) => (
+    <LinkCard
+      title={plugin.data.title}
+      description={plugin.data.description || "No description provided."}
+      href={`/docs/${plugin.id}/`} 
+    />
+  ))}
+</CardGrid>
