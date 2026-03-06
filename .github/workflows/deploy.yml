@@ -35,7 +35,8 @@ jobs:
               run: |
                   mkdir -p dist/docs
                   cp index.html dist/
-                  cp -r docs/* dist/docs/
+                  cp -r src/ dist/src/
+                  cp -r docs/. dist/docs/
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
