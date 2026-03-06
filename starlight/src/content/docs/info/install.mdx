@@ -21,9 +21,7 @@ TODO, ADD RPM TARBALL AND STUFF TOO LAZY RN, OH AND ALSO LINKS TO THE DOWNLOADS 
 
 ##### Nix
 
-If you're just using the Nix package manager (not NixOS), use alternative methods for installation if possible.
-
-For Nix users who prefer the flake approach:
+If you're using the Nix package manager (not NixOS):
 
 <Tabs>
 	<TabItem label="Install to your profile">```bash nix profile install github:hamhimdev/recar/main ```</TabItem>
@@ -33,7 +31,7 @@ For Nix users who prefer the flake approach:
 ##### NixOS
 
 A flake is provided that you can use to install the program on NixOS systems.
-Optionally, you can also add the system package directly in your configuration.nix. To do so you will need to define the pixelfix input in the file parameters.
+Optionally, you can also add the system package directly in your configuration.nix. To do so you will need to define the Recar input in the file parameters.
 
 import flake from "./assets/flake.nix?raw";
 
@@ -90,7 +88,7 @@ To build Recar from source, you'll need `nodejs`, `pnpm`, and `git`.
     ```
 
 4. **Launch Recar**:
-   `bash
+    ```bash
     pnpm start
-    `
+    ```
 </Steps>

@@ -5,19 +5,19 @@ description: Frequently asked questions about Recar.
 
 ### Will I get banned for using Recar?
 
-Short answer, ***very unlikely!***
+Short answer, ***you're really unlikely to be banned!***
 
-Long answer, using a modified Discord client is _technically_ against Discord's Terms of Service. However, users of client mods like Vencord, Equicord and alternative clients like Vesktop have not experienced bans related to appropriately using custom clients and client mods. Recar generally avoids adding features Discord would be mad at, features that could be considered as self botting for example, which Discord takes more seriously.
+Long answer, using a modified Discord client is _technically_ against [Discord's Terms of Service](https://discord.com/terms/). However, users of client mods like Vencord, Equicord and alternative clients like Vesktop have not experienced bans related to appropriately using custom clients and client mods. Recar generally avoids adding features Discord would be mad at, features that could be considered as self botting for example, which Discord takes more seriously.
 
-Just avoid sending very obviously modded Discord screenshots, you being reported by a user or being banned from servers are bigger risks. We're not responsible for anything that happens to your account.
+Just avoid sending very obviously modded Discord screenshots, being reported by a user or being banned from servers are bigger risks. We're not responsible for anything that happens to your account!
 
 ### Why not just use the official client?
 
 Recar offers several advantages for Linux users compared to the official client.
 
-- **Better performance,** we have Linux specific flags enabled, more up to date Electron and Screensharing should also be smooth!
-- **More Features!** You can screenshare with audio on Recar for example, which is not possible on the official Linux client.
-- **Expanded Features** such as the global calling popup, and (soon!) Recar overlay.
+- **Better performance,** we have Linux specific flags enabled, more up to date Electron and streaming should also be smoother!
+- **More Features!** You can stream (screenshare) with audio on Recar for example, which is not possible on the official Linux client.
+- **Expanded Features** such as the global ringing popup, and (soon!) Recar overlay.
 - **Updates are not a pain.** Discord web will automatically update itself, and the client mods only updates every Recar update. Discord on Linux, especially if using prepackaged versions and not the Flatpak, cannot auto update. Recar can't either right now, but will be able to eventually.
 
 ### Why not just use Vesktop, Equibop or Legcord as a client?
@@ -26,14 +26,15 @@ Vesktop is great, Equibop is too and so is Legcord. But here's why Recar is as g
 
 ##### Vesktop & Equibop
 1. You're stuck on either Equicord or Vencord, you can't switch between them. (though this is a silly reason, it doesn't really matter)
-2. Their settings page requires the relevant client mod loading properly, Recar settings are, however, external and seperate. But you can still open them in Discord settings assuming the client mod loaded properly.
+2. Their settings page requires the relevant client mod loading properly, Recar settings are, however, external and separate. But you can still open them in Discord settings assuming the client mod loaded properly.
 3. Faster launch times, not by much, but still. Though this is heavily dependent on your system.
 4. Recar has some more Recar only plugins that add onto BOTH client mods.
+5. No global ringing popup and Recar Overlay, that's Recar special!!!
 
 However, they also have advantages over Recar.
 
 **License**  
-Vesktop (and by extention, Equibop) uses the GPL license (a copyleft license), which has clauses written which would mean making their software proprietary is not possible.  Recar becoming proprietary is possible due to it using the MIT License (a permissive license), however it also gives users more control, and also gives us (the creators) more control, like the power to relicense it to a copyleft license in the future. Recar is MIT licensed so people can take Recar's code and use it elsewhere with their own choice for license. It really doesn't matter for everyday users though.
+Vesktop (and by extention, Equibop) uses the GPL license (a copyleft license), which has clauses written which would mean making their software proprietary is not possible. Recar becoming proprietary is possible due to it using the MIT License (a permissive license), however it also gives users more control, and also gives us (the creators) more control, like the power to relicense it to a copyleft license in the future. Recar is MIT licensed so people can take Recar's code and use it elsewhere with their own choice for license. It really doesn't matter for everyday users though.
 
 **Maturity**  
 Vesktop has been around for a while now and therefore is very mature, plus is maintained by reputable people in the Discord modding community. Equibop is also rather reputable now. Recar is very new compared to these projects.
@@ -41,12 +42,17 @@ Vesktop has been around for a while now and therefore is very mature, plus is ma
 ##### Legcord
 1. Client side decoration due to using Tauri (on Wayland only I think?) in KDE Plasma and likely other QT enviroments. Recar being Electron uses SSD if available. This is a minor nitpick though.
 2. No wayland streaming!
+3. Again, no global ringing popup and Recar Overlay, that's Recar special!!!
 
 An advantage Legcord has however is that it uses Tauri, and therefore has potentially lower memory usage as it uses WebkitGTK on Linux than the Chromium engine, infamous for its ram usage.
 
 ### Is Recar open source?
 
 Yes! Recar is licensed under the MIT license. You can find the source code and contribute on [Codeberg](https://codeberg.org/hamhim/recar).
+
+### Why are the Recar Docs maintained on GitHub but Recar in Codeberg?
+
+Codeberg does not train AI on your data, actively blocks AI scraping using [Anubis](https://anubis.techaro.lol/), is GDPR compliant and run by a non-profit. They also sadly do not have the same resources as GitHub, and I don't want to waste it. Recar Docs uses Starlight (Astro) which needs to be "built", which to automate needs a CI/CD solution to do so, and therefore it uses Github Actions deploying to GitHub Pages. Codeberg has equivalents called Woodpecker CI and Forgejo Actions, however my preference is to avoid consuming their resources unnecessarily (though the actual resource impact would likely be minimal).
 
 ### Is it recar or Recar?
 
