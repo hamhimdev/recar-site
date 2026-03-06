@@ -1,0 +1,107 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+interface PluginEntry extends CollectionEntry<"docs"> {
+  data: CollectionEntry<"docs">["data"] & {
+    by?: string[];
+  };
+}
+
+const currentPath = Astro.url.pathname;
+const id = currentPath.replace(/^\/docs\//, "").replace(/\/$/, "");
+
+const allDocs = await getCollection("docs");
+const entry = allDocs.find((e) => e.id === id) as PluginEntry | undefined;
+
+const getAvatarData = (handle: string) => {
+  const [platform, username] = handle.includes(":") ? handle.split(":") : ["github", handle];
+  return {
+    url: platform === "codeberg"
+      ? `https://codeberg.org/${username}.png`
+      : `https://github.com/${username}.png?size=40`,
+    profile: platform === "codeberg"
+      ? `https://codeberg.org/${username}`
+      : `https://github.com/${username}`,
+  };
+};
+---
+
+{entry && (
+  <div class="plugin-card not-prose">
+    <div class="stack">
+      <a href={`/docs/${entry.id}/`} class="title-link">
+        <span class="title">{entry.data.title}</span>
+      </a>
+      {entry.data.description && <span class="description">{entry.data.description}</span>}
+    </div>
+    <div class="avatar-section">
+      {entry.data.by &&
+        entry.data.by.map((handle) => {
+          const { url, profile } = getAvatarData(handle);
+          return (
+            <a href={profile} target="_blank" rel="noopener noreferrer" class="avatar-link">
+              <img src={url} alt={handle} title={handle} class="avatar-img" />
+            </a>
+          );
+        })}
+    </div>
+  </div>
+)}
+
+<style>
+  .plugin-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--sl-color-black);
+    position: relative;
+    width: 350px;
+  }
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .title-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  .title {
+    color: var(--sl-color-white);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .description {
+    color: var(--sl-color-gray-3);
+    line-height: 1.4;
+  }
+  .avatar-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.35rem;
+    z-index: 2;
+    align-self: start;
+    margin-top: 2px;
+  }
+  .avatar-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    border: none;
+    object-fit: cover;
+    display: block;
+  }
+  .plugin-card:hover {
+    background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+    border-color: var(--sl-color-gray-2);
+  }
+  .plugin-card a {
+    text-decoration: none;
+  }
+</style>

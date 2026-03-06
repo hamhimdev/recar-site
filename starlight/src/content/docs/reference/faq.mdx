@@ -9,7 +9,7 @@ Short answer, ***very unlikely!***
 
 Long answer, using a modified Discord client is _technically_ against Discord's Terms of Service. However, users of client mods like Vencord, Equicord and alternative clients like Vesktop have not experienced bans related to appropriately using custom clients and client mods. Recar generally avoids adding features Discord would be mad at, features that could be considered as self botting for example, which Discord takes more seriously.
 
-Just avoid sending very obviously modded Discord screenshots, you being reported by a user or banned from servers are bigger risks. We're not responsible for anything that happens to you.
+Just avoid sending very obviously modded Discord screenshots, you being reported by a user or being banned from servers are bigger risks. We're not responsible for anything that happens to your account.
 
 ### Why not just use the official client?
 
@@ -26,8 +26,8 @@ Vesktop is great, Equibop is too and so is Legcord. But here's why Recar is as g
 
 ##### Vesktop & Equibop
 1. You're stuck on either Equicord or Vencord, you can't switch between them. (though this is a silly reason, it doesn't really matter)
-2. Their settings depend on the client mod loading properly, Recar settings are seperated and are external. But you can still open them in Discord settings assuming the client mod loaded properly.
-3. Faster launch. Though this is heavily dependent on your system.
+2. Their settings page requires the relevant client mod loading properly, Recar settings are, however, external and seperate. But you can still open them in Discord settings assuming the client mod loaded properly.
+3. Faster launch times, not by much, but still. Though this is heavily dependent on your system.
 4. Recar has some more Recar only plugins that add onto BOTH client mods.
 
 However, they also have advantages over Recar.
@@ -54,6 +54,6 @@ Use whatever, I use either one of them. However if I must choose, use "Recar".
 
 ### How do I update Recar?
 
-- **Nix**: Simply update your flake lockfile or run `nix profile upgrade recar`.
+- **NixOS**: Simply update your flake, then rebuild. If you don't know how to, annoy user @clay.rip on Discord for a bit.
 - **Packages**: Download the latest release from the website and reinstall.
-- **Source**: Run `git pull` followed by `pnpm install` and `pnpm build:mods`.
+- **Source**: Run `git pull --recurse-submodules` followed by `pnpm install` and `pnpm build:mods`.
