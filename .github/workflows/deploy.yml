@@ -28,8 +28,7 @@ jobs:
               run: pnpm install
 
             - name: Build Starlight site
-              working-directory: ./starlight
-              run: pnpm run build
+              run: pnpm --filter starlight run build
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
