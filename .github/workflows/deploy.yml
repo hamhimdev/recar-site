@@ -1,4 +1,5 @@
 name: Deploy to GitHub Pages
+
 on:
     push:
         branches: [main]
@@ -30,10 +31,16 @@ jobs:
             - name: Build Starlight site
               run: pnpm --filter starlight run build
 
+            - name: Assemble output
+              run: |
+                  mkdir -p dist/docs
+                  cp index.html dist/
+                  cp -r docs/dist/* dist/docs/
+
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: .
+                  path: ./dist
 
     deploy:
         needs: build
