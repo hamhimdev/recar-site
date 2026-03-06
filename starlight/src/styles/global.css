@@ -16,11 +16,11 @@
 }
 
 * {
-  transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
 }
 
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 :root,
@@ -35,7 +35,7 @@ html {
 	--recar-secondary: #d5dbe8;
 	--recar-muted: #959aa5;
 	--recar-white: #e5e7f9;
-  --recar-invert: #181b3f;
+	--recar-invert: #181b3f;
 	--hero-glow: color-mix(in srgb, var(--recar-accent) 12%, transparent);
 }
 
@@ -172,14 +172,18 @@ summary {
 	font-weight: 700;
 }
 
-p, ul, li, summary span, a {
+p,
+ul,
+li,
+summary span,
+a {
 	font-size: 18px;
 }
 
 .sidebar-content a {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 video {
-  border-radius: 4px;
+	border-radius: 4px;
 }

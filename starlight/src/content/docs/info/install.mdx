@@ -26,16 +26,8 @@ If you're just using the Nix package manager (not NixOS), use alternative method
 For Nix users who prefer the flake approach:
 
 <Tabs>
-	<TabItem label="Install to your profile">
-    ```bash
-    nix profile install github:hamhimdev/recar/main
-    ```
-    </TabItem>
-    <TabItem label="Run without installing">
-    ```bash
-    nix run github:hamhimdev/recar/main
-    ```
-    </TabItem>
+	<TabItem label="Install to your profile">```bash nix profile install github:hamhimdev/recar/main ```</TabItem>
+	<TabItem label="Run without installing">```bash nix run github:hamhimdev/recar/main ```</TabItem>
 </Tabs>
 
 ##### NixOS
@@ -43,7 +35,7 @@ For Nix users who prefer the flake approach:
 A flake is provided that you can use to install the program on NixOS systems.
 Optionally, you can also add the system package directly in your configuration.nix. To do so you will need to define the pixelfix input in the file parameters.
 
-import flake from './assets/flake.nix?raw';
+import flake from "./assets/flake.nix?raw";
 
 export const flakefocus = [
 	"recar",
@@ -52,15 +44,15 @@ export const flakefocus = [
 	"recar.packages.x86_64-linux.default",
 ];
 
-import configuration1 from './assets/configuration1.nix?raw';
-import configuration2 from './assets/configuration2.nix?raw';
-import configuration3 from './assets/configuration3.nix?raw';
+import configuration1 from "./assets/configuration1.nix?raw";
+import configuration2 from "./assets/configuration2.nix?raw";
+import configuration3 from "./assets/configuration3.nix?raw";
 
 <Tabs>
 	<TabItem label="With flake.nix">
 		<Code code={flake} lang="nix" title="flake.nix" mark={flakefocus} wrap="true" />
 	</TabItem>
-    <TabItem label="With configuration.nix">
+	<TabItem label="With configuration.nix">
 		On the top:
 		<Code code={configuration1} lang="nix" title="configuration.nix" wrap="true" />
 		And then recar to your packages:
@@ -78,7 +70,7 @@ To build Recar from source, you'll need `nodejs`, `pnpm`, and `git`.
 
 1. **Clone the repository**:
 
-    `--recursive` is very important as roverpp (Recar Overlay), Equicord and Vencord are installed as Git submodules.
+    The `--recursive` flag is very important as [roverpp](https://github.com/TheUnium/roverpp/) (Recar Overlay), Equicord and Vencord are included as Git submodules.
 
     ```bash
     git clone --recursive https://codeberg.org/hamhim/recar.git
@@ -98,7 +90,7 @@ To build Recar from source, you'll need `nodejs`, `pnpm`, and `git`.
     ```
 
 4. **Launch Recar**:
-    ```bash
+   `bash
     pnpm start
-    ```
-</Steps>
+    `
+    </Steps>
