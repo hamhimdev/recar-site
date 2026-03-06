@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+	--font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+    --font-title: "Figtree", ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+	--font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+    --font-title: "Figtree", ui-sans-serif, system-ui, sans-serif;
+
+	--color-base: #0f1012;
+	--color-sidebar: #141518;
+	--color-surface: #1a1c20;
+	--color-elevated: #202328;
+	--color-hover: #252830;
+	--color-accent: #5764f2;
+	--color-accent-dim: #4752c4;
+	--color-border: #2a2d34;
+	--color-border-sub: #1e2026;
+	--color-muted: #959aa5;
+	--color-secondary: #d5dbe8;
+	--color-primary: #f0f1f3;
+	--color-success: #23a559;
+	--color-danger: #ed4245;
+	--color-danger-dim: #c03537;
+}
+
+@font-face {
+	font-family: "Material Symbols Rounded";
+	font-style: normal;
+	font-weight: 400;
+	src: url("MaterialSymbolsRounded[FILL,GRAD,opsz,wght].woff2") format("woff2");
+}
+
+.material-symbols-rounded {
+	font-family: "Material Symbols Rounded";
+	font-size: 16px;
+	font-variation-settings:
+		"FILL" 1,
+		"wght" 400,
+		"GRAD" 0,
+		"opsz" 24;
+}

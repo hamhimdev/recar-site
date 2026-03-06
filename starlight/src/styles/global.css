@@ -1,0 +1,174 @@
+@layer base, starlight, theme, components, utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import "@astrojs/starlight-tailwind";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+	--recar-font-title: "Figtree", sans-serif;
+	--recar-font-body: "Source Sans 3", sans-serif;
+
+	--color-accent-200: #bac6f7;
+	--color-accent-600: #4c55e2;
+	--color-accent-900: #232a67;
+	--color-accent-950: #1a2045;
+}
+
+* {
+  transition: all 0.1s ease-in-out;
+}
+
+:root,
+[data-theme="dark"] {
+	--recar-base: #0f1012;
+	--recar-surface: #141518;
+	--recar-border: #27272a;
+	--recar-accent-text: #b2b7ee;
+	--recar-accent: #5764f2;
+	--recar-accent-dim: #4752c4;
+	--recar-primary: #f0f1f3;
+	--recar-secondary: #d5dbe8;
+	--recar-muted: #959aa5;
+	--recar-white: #e5e7f9;
+  --recar-invert: #181b3f;
+	--hero-glow: color-mix(in srgb, var(--recar-accent) 12%, transparent);
+}
+
+[data-theme="light"] {
+	--recar-base: #ffffff;
+	--recar-surface: #f9fafb;
+	--recar-border: #e5e7eb;
+	--recar-accent-text: #5764f2;
+	--recar-accent: #5764f2;
+	--recar-accent-dim: #4752c4;
+	--recar-primary: #111827;
+	--recar-secondary: #374151;
+	--recar-muted: #6b7280;
+	--recar-white: #e5e7f9;
+	--recar-invert: #ffffff;
+	--hero-glow: color-mix(in srgb, var(--recar-accent) 16%, transparent);
+}
+
+:root {
+	--sl-font: var(--recar-font-body);
+	--sl-font-system: var(--recar-font-body);
+}
+
+:root,
+[data-theme="dark"],
+[data-theme="light"] {
+	--sl-color-bg: var(--recar-base);
+	--sl-color-bg-nav: var(--recar-surface);
+	--sl-color-bg-sidebar: var(--recar-surface);
+	--sl-color-hairline: var(--recar-border);
+	--sl-color-hairline-light: var(--recar-border);
+	--sl-color-text: var(--recar-secondary);
+	--sl-color-text-accent: var(--recar-accent-text);
+	--sl-color-white: var(--recar-primary);
+	--sl-color-accent: var(--recar-accent);
+	--sl-color-accent-low: var(--recar-primary);
+	--sl-color-accent-high: var(--recar-accent-dim);
+	--sl-color-black: var(--recar-surface);
+	--sl-font: var(--recar-font-body);
+	--sl-font-system: var(--recar-font-body);
+	--sl-color-text-invert: var(--recar-invert);
+}
+
+.sl-link-button {
+	border-radius: 8px;
+	padding-block: calc(var(--spacing) * 2);
+	font-weight: 600;
+}
+
+.sl-link-button.minimal {
+	color: var(--recar-primary);
+}
+
+.sl-link-button.primary {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	background-color: var(--recar-accent);
+	border-width: 0;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	max-height: 2.5rem;
+	border-radius: 0.5rem;
+	color: var(--recar-white);
+	line-height: 1.75rem;
+	transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	cursor: pointer;
+}
+
+.sl-link-button.primary:hover {
+	background-color: var(--recar-accent-dim);
+}
+
+.sl-link-button.primary:active {
+	scale: 0.98;
+}
+
+.sl-link-button.primary:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+.recar-hero-title {
+	display: block;
+	font-family: var(--recar-font-title);
+	font-size: clamp(4rem, 10vw, 8rem);
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	line-height: 1;
+	color: var(--recar-accent);
+	margin-bottom: 0.15em;
+}
+
+header.header {
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	background: color-mix(in srgb, var(--recar-base) 60%, transparent) !important;
+	border-bottom: 1px solid var(--recar-border);
+}
+
+.sidebar-content a {
+	padding-left: 12px;
+	padding-top: 4px;
+	padding-bottom: 6px;
+}
+
+.top-level summary {
+	margin-bottom: 2px;
+}
+
+.hero {
+	background: var(--recar-base);
+	padding-block: 4rem 3rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.hero::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background: radial-gradient(ellipse 60% 40% at 50% 0%, var(--hero-glow) 0%, transparent 70%);
+	pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+	font-family: "Figtree", sans-serif;
+	color: var(--recar-primary);
+	font-weight: 700;
+}
+
+p,
+a {
+	font-size: 16px;
+}

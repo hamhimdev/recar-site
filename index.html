@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="src/tailwind.css" rel="stylesheet" />
+
+		<link rel="icon" type="image/png" href="src/recaricon.png" />
+
+		<title>Recar</title>
+		<meta name="title" content="Recar - Linux First Discord Client" />
+		<meta
+			name="description"
+			content="Recar offers a snappier experience, Vencord and Equicord support, and many quality of life features. If you've used Discord on Windows, you should feel right at home. "
+		/>
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://recar.loxodrome.app" />
+		<meta property="og:title" content="Recar - Linux-First Discord Client" />
+		<meta
+			property="og:description"
+			content="Recar offers a snappier experience, Vencord and Equicord support, and many quality of life features. If you've used Discord on Windows, you should feel right at home. "
+		/>
+		<meta property="og:image" content="https://recar.loxodrome.app/src/social.png" />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://recar.loxodrome.app" />
+		<meta property="twitter:title" content="Recar - Linux-First Discord Client" />
+		<meta
+			property="twitter:description"
+			content="Recar offers a snappier experience, Vencord and Equicord support, and many quality of life features. If you've used Discord on Windows, you should feel right at home. "
+		/>
+		<meta property="twitter:image" content="https://recar.loxodrome.app/src/social.png" />
+
+		<style>
+			.nav-blur {
+				backdrop-filter: blur(16px);
+				-webkit-backdrop-filter: blur(16px);
+				border-bottom: 1px solid var(--color-border);
+			}
+
+			::-webkit-scrollbar {
+				width: 4px;
+			}
+			::-webkit-scrollbar-track {
+				background: #0e0e10;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #27272a;
+				border-radius: 2px;
+			}
+		</style>
+	</head>
+	<body class="overflow-x-hidden bg-base scroll-smooth">
+		<header class="nav-blur bg-base/50 top-0 left-0 right-0 z-50 fixed">
+			<div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+				<a href="#" class="flex items-center gap-2.5 group">
+					<img src="src/recar.svg" class="h-6" />
+				</a>
+
+				<nav class="md:flex items-center gap-1 transition-colors font-medium">
+					<a href="/discord" class="hidden md:block px-3 py-1 text-md text-secondary hover:text-white transition-colors font-sans">Discord</a>
+					<a href="/docs" class="px-3 py-1 text-md not-lg:hidden text-secondary hover:text-white transition-colors font-sans">Docs</a>
+					<a
+						href="https://codeberg.org/hamhim/recar"
+						target="_blank"
+						class="px-3 py-1 text-md not-lg:hidden text-secondary hover:text-white transition-colors font-sans flex items-center gap-1.5"
+						>Codeberg</a
+					>
+				</nav>
+
+				<div class="flex items-center gap-2">
+					<a href="/discord" class="md:hidden px-3 py-1 text-md text-secondary hover:text-white transition-colors font-sans font-medium">Discord</a>
+					<a
+						href="#"
+						class="flex justify-center items-center gap-2 bg-accent disabled:opacity-40 py-1 px-4 max-h-10 rounded-lg font-semibold text-white text-md active:scale-[0.98] transition-all hover:bg-accent-dim disabled:cursor-not-allowed"
+					>
+						Download
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<section class="relative min-h-screen flex flex-col overflow-hidden max-w-[1280px] mx-auto pt-24" id="home">
+			<div class="relative z-10 max-w-6xl px-6 pt-24 pb-0 flex flex-col items-start">
+				<div class="stagger-2">
+					<img src="src/recar.svg" class="h-24" />
+					<div class="flex flex-row gap-2 items-baseline">
+						<h1 class="text-6xl md:text-8xl font-800 leading-none tracking-tight mb-1 font-title text-primary font-semibold">recar</h1>
+						<p class="font-sans text-muted text-2xl tracking-wider">/ˈriiːkɑr/</p>
+					</div>
+				</div>
+
+				<p class="text-secondary text-lg md:text-xl max-w-xl leading-snug mb-4 font-sans">
+					The Linux-first Discord client. Recar offers a snappier experience, Vencord and Equicord support, and many quality of life features. If
+					you've used Discord on Windows, you should feel right at home.
+				</p>
+				<div></div>
+
+				<div class="flex items-center gap-3 flex-wrap">
+					<a
+						href="/install"
+						class="flex font-sans justify-center items-center gap-2 bg-accent disabled:opacity-40 py-2 px-4 max-h-10 rounded-lg font-semibold text-white text-lg active:scale-[0.98] transition-all hover:bg-accent-dim disabled:cursor-not-allowed"
+						>Download</a
+					>
+					<a
+						href="https://codeberg.org/hamhim/recar"
+						class="flex font-sans justify-center items-center gap-2 border border-border disabled:opacity-40 py-2 px-4 max-h-10 rounded-lg font-semibold text-white text-lg active:scale-[0.98] transition-all hover:border-accent-dim disabled:cursor-not-allowed"
+						>Codeberg</a
+					>
+					<a
+						href="/docs"
+						class="flex font-sans justify-center items-center gap-2 border border-border disabled:opacity-40 py-2 px-4 max-h-10 rounded-lg font-semibold text-white text-lg active:scale-[0.98] transition-all hover:border-accent-dim disabled:cursor-not-allowed"
+						>Docs</a
+					>
+				</div>
+			</div>
+			<div class="relative z-10 w-full px-6 mt-8">
+				<img src="src/equicord.png" class="absolute w-32 -top-20 right-8 -z-10 shadow-md lg:visible not-lg:hidden" />
+				<img src="src/vencord.png" class="absolute w-32 -top-20 right-20 -z-9 drop-shadow-2xl drop-shadow-black lg:visible not-lg:hidden" />
+				<div class="relative w-full overflow-hidden">
+					<img src="src/recar.png" alt="Recar Discord client screenshot" class="w-full rounded-t-md object-cover object-bottom" />
+					<div class="absolute inset-0 w-full h-full pointer-events-none not-xl:hidden">
+						<iframe
+							src="html/recarsettings.html"
+							class="absolute pointer-events-auto"
+							style="
+								right: 6.8%;
+								bottom: 4.6%;
+								scale: 70%;
+								width: 59.6%;
+								height: 81.5%;
+								transform-origin: bottom right;
+								border-bottom-left-radius: 0.5rem;
+								border-bottom-right-radius: 0.5rem;
+							"
+							frameborder="0"
+						></iframe>
+						<iframe
+							src="html/recarcalling.html"
+							class="absolute pointer-events-auto"
+							style="left: 24%; bottom: 22%; scale: 70%; width: 17%; height: 40%; transform-origin: bottom right"
+							frameborder="0"
+						></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="border-t border-zinc-900 py-10">
+			<div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-4 justify-center">
+				<img src="src/recar.svg" class="w-12" />
+
+				<p class="font-sans text-sm text-center text-muted">
+					Not affiliated with Discord<br />
+					Technically, you may get your account banned by using Recar, but you should be fine.<br />
+					©
+					<a href="https://codeberg.org/hamhim/" class="text-accent-dim hover:underline transition-all hover:text-accent">hamhim</a>
+					&
+					<a href="https://loxodrome.app/" class="text-accent-dim hover:underline transition-all hover:text-accent">Loxodrome</a>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
