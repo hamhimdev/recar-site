@@ -33,10 +33,11 @@ jobs:
 
             - name: Assemble output
               run: |
-                  mkdir -p dist/docs
+                  mkdir -p dist/docs/src/assets
                   cp index.html dist/
-                  cp -r src/ dist/src/
+                  cp -r src/. dist/src/
                   cp -r docs/. dist/docs/
+                  cp -r starlight/src/assets/. dist/docs/src/assets/
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
