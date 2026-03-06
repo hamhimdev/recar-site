@@ -1,20 +1,121 @@
 ---
-import { getCollection } from 'astro:content';
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { getCollection, type CollectionEntry } from "astro:content";
 
-const allDocs = await getCollection('docs');
+interface PluginEntry extends CollectionEntry<"docs"> {
+	data: CollectionEntry<"docs">["data"] & {
+		by?: string[];
+	};
+}
 
-const plugins = allDocs.filter(entry => 
-  entry.id.startsWith('info/plugins/') && !entry.id.endsWith('index.md') && !entry.id.endsWith('index.mdx')
-);
+const allDocs = await getCollection("docs");
+const plugins = allDocs.filter((entry) => entry.id.startsWith("info/plugins/") && !entry.id.endsWith("index")) as PluginEntry[];
+
+const getAvatarData = (handle: string) => {
+	const [platform, username] = handle.includes(":") ? handle.split(":") : ["github", handle];
+	return {
+		url: platform === "codeberg" ? `https://codeberg.org/${username}.png` : `https://github.com/${username}.png?size=40`,
+		profile: platform === "codeberg" ? `https://codeberg.org/${username}` : `https://github.com/${username}`,
+	};
+};
 ---
 
-<CardGrid>
-  {plugins.map((plugin) => (
-    <LinkCard
-      title={plugin.data.title}
-      description={plugin.data.description || "No description provided."}
-      href={`/docs/${plugin.id}/`} 
-    />
-  ))}
-</CardGrid>
+<div class="plugin-list-grid not-prose">
+	{
+		plugins.map((plugin) => (
+			<div class="plugin-card">
+				<div class="stack">
+					<a href={`/docs/${plugin.id}/`} class="title-link">
+						<span class="title">{plugin.data.title}</span>
+					</a>
+					{plugin.data.description && <span class="description">{plugin.data.description}</span>}
+				</div>
+
+				<div class="avatar-section">
+					{plugin.data.by &&
+						plugin.data.by.map((handle) => {
+							const { url, profile } = getAvatarData(handle);
+							return (
+								<a href={profile} target="_blank" rel="noopener noreferrer" class="avatar-link">
+									<img src={url} alt={handle} title={handle} class="avatar-img" />
+								</a>
+							);
+						})}
+				</div>
+			</div>
+		))
+	}
+</div>
+
+<style>
+	.plugin-list-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 1rem;
+		align-items: stretch !important;
+	}
+
+	.plugin-card {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 0.75rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.5rem;
+		padding: 0.75rem 1rem;
+		margin-top: 0 !important;
+		background: var(--sl-color-black);
+		position: relative;
+		align-self: stretch !important;
+	}
+
+	.stack {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.title-link::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+	}
+
+	.title {
+		color: var(--sl-color-white);
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	.description {
+		color: var(--sl-color-gray-3);
+		line-height: 1.4;
+	}
+
+	.avatar-section {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.35rem;
+		z-index: 2;
+		align-self: start;
+		margin-top: 2px;
+	}
+
+	.avatar-img {
+		width: 24px;
+		height: 24px;
+		border-radius: 9999px;
+		border: none;
+		object-fit: cover;
+		display: block;
+	}
+
+	.plugin-card:hover {
+		background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+		border-color: var(--sl-color-gray-2);
+	}
+
+	.plugin-card a {
+		text-decoration: none;
+	}
+</style>
