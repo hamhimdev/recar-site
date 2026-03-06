@@ -1,5 +1,7 @@
-onlyBuiltDependencies:
-    - "@parcel/watcher"
-
 packages:
-    - "starlight"
+  - starlight
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - sharp
