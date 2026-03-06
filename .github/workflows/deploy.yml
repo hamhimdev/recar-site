@@ -25,10 +25,10 @@ jobs:
                   node-version: 22
 
             - name: Install dependencies
-              working-directory: ./starlight
               run: pnpm install
 
             - name: Build Starlight site
+              working-directory: ./starlight
               run: pnpm run build
 
             - name: Upload artifact
