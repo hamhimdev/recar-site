@@ -128,7 +128,7 @@
 	margin-bottom: 0.15em;
 }
 
-header.header {
+header {
 	backdrop-filter: blur(16px);
 	-webkit-backdrop-filter: blur(16px);
 	background: color-mix(in srgb, var(--recar-base) 60%, transparent) !important;
