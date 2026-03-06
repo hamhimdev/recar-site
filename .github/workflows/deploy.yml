@@ -35,7 +35,9 @@ jobs:
               run: |
                   mkdir -p dist/docs/src/assets
                   cp index.html dist/
+                  cp discord.html dist/
                   cp -r src/. dist/src/
+                  cp -r html/. dist/html/
                   cp -r docs/. dist/docs/
                   cp -r starlight/src/assets/. dist/docs/src/assets/
 
