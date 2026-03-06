@@ -33,9 +33,9 @@ jobs:
 
             - name: Assemble output
               run: |
-                  mkdir -p dist
+                  mkdir -p dist/docs
                   cp index.html dist/
-                  cp -r docs/* dist/
+                  cp -r docs/* dist/docs/
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
