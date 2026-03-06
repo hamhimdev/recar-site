@@ -28,7 +28,7 @@ export default defineConfig({
 				},
 			],
 			editLink: {
-				baseUrl: "https://github.com/hamhimdev/recar-site/edit/main/docs/",
+				baseUrl: "https://github.com/hamhimdev/recar-site/edit/main/starlight/",
 			},
 			sidebar: [
 				{ label: "Introduction", autogenerate: { directory: "introduction" } },
