@@ -1,13 +1,13 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    pixelfix.url = "github:hamhimdev/pixelfix-rs/main";
+    recar.url = "github:hamhimdev/recar/main";
   };
 
-  outputs = { self, nixpkgs, pixelfix }: {
+  outputs = { self, nixpkgs, recar }: {
     nixosConfigurations.yourhostname = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit pixelfix; }; # !!!
+      specialArgs = { inherit recar; }; # !!!
       modules = [ ./configuration.nix ];
     };
   };

@@ -10,7 +10,7 @@
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
-	"packageManager": "pnpm@10.28.2",
+	"packageManager": "pnpm@11.8.0",
 	"devDependencies": {
 		"@tailwindcss/cli": "^4.2.1",
 		"tailwindcss": "^4.2.1"
