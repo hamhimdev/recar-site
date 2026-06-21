@@ -7,7 +7,11 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
 	outDir: "../docs",
 	site: "https://recar.loxodrome.app",
-	base: "/docs/",
+	base: "/docs",
+	redirects: {
+		"/": "/docs/introduction/welcome/",
+		"/docs/": "/docs/introduction/welcome/",
+	},
 	integrations: [
 		starlight({
 			title: "Recar Docs",
