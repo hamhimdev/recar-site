@@ -27,7 +27,7 @@ export default defineConfig({
 				},
 				{
 					icon: "github",
-					label: "Docs",
+					label: "Docs Github",
 					href: "https://github.com/hamhimdev/recar-site",
 				},
 				{
