@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     recar.url = "github:hamhimdev/recar/main";
-    # If you prefer, you can replace this with Codeberg by using git+https://codeberg.org/hamhim/recar/main, however if you don't have proper ipv6 you might have trouble using this.
+    # If you prefer, you can replace this with Codeberg by using git+https://codeberg.org/Loxodrome/recar/main, however if you don't have proper ipv6 you might have trouble using this.
   };
 
   outputs = { self, nixpkgs, recar }: {

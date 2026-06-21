@@ -26,9 +26,14 @@ export default defineConfig({
 					href: "https://recar.loxodrome.app/discord",
 				},
 				{
+					icon: "github",
+					label: "Docs",
+					href: "https://github.com/hamhimdev/recar-site",
+				},
+				{
 					icon: "codeberg",
 					label: "Codeberg",
-					href: "https://codeberg.org/hamhim/recar",
+					href: "https://codeberg.org/Loxodrome/recar",
 				},
 			],
 			editLink: {
