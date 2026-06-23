@@ -42,6 +42,7 @@ export default defineConfig({
 			sidebar: [
 				{ label: "Introduction", autogenerate: { directory: "introduction" } },
 				{ label: "Information", autogenerate: { directory: "info" } },
+				{ label: "Options", autogenerate: { directory: "options" } },
 				{ label: "Reference", autogenerate: { directory: "reference" } },
 			],
 			customCss: ["./src/styles/global.css"],

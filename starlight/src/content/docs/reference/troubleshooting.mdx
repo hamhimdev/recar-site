@@ -3,4 +3,31 @@ title: Troubleshooting
 description: Common issues and how to fix them.
 ---
 
+### Recar Overlay
+
+#### Disabling Overlay on specific applications
+
+Due to the nature of how Recar Overlay is implemented, it uses a system of exclusion rather than inclusion (similar to actual Discord Overlay). Some programs due to this may inherit Recar Overlay which you may wish to not include.
+
+This can happen with the Zed editor for example, so to disable it:
+```bash
+DISABLE_RECAR_OVERLAY=1 zed # Replace with the program that you want to disable overlay for
+```
+
+<img src="../../src/assets/media/disableoverlay.png"></img>
+
+---
+
+This also works with Steam applications and games by modifying launch options.
+
+<img src="../../src/assets/media/steam.png"></img>
+
+For now this is the only way to disable overlay for specific applications.
+
+#### Recar Overlay not working
+
+Recar does not properly ship and install overlay functionality by default. Install it from the developer page in settings assuming you are on an official build that should ship Recar Overlay. Also, make sure it is enabled under the Overlay section in the settings page.
+
+---
+
 idk we havent faced many issues lol

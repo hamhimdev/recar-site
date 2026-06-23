@@ -5,6 +5,26 @@ description: Explore what makes Recar different from the official Discord client
 
 Recar is designed to bridge the gap between Discord Web and a native Linux application. Here are some of its core features.
 
+### Recar Overlay
+
+Recar has a tightly intergrated game overlay implementation that is distro agnostic for Linux.
+
+<video controls muted autoplay loop src="../../src/assets/media/overlay.webm"></video>
+> *Recar Overlay on Wayland, KDE Plasma, games in order: ULTRAKILL, Minecraft (1.8.9) w/ Zink, Illusion Carnival, A Hat in Time*
+
+As seen in the video above and below, Recar Overlay can be customized to move sections of the UI to any corner or edge.
+
+<video controls muted autoplay loop src="../../src/assets/media/overlaycustomization.webm"></video>
+> *Recar on Wayland, KDE Plasma. Testing version, so may not represent actual featureset.*
+
+Recar implements the [roverpp](https://codeberg.org/TheUnium/roverpp) project, specifically made for Recar Overlay.
+
+#### Support
+
+Recar Overlay is heavily unfinished, however about 95% of Vulkan games (including games running under Proton over DXVK, basically anything that isn't too old) should just work.
+
+Potential troubleshoot options are in [the troubleshooting page](../../reference/troubleshooting) in the event of an issue.
+
 ### Screen Sharing Improvements
 
 Recar includes robust support for screen sharing on Wayland and X11, with audio.
@@ -21,9 +41,9 @@ Demonstrated in the video is:
 
 Recar implements the [venmic](https://github.com/Vencord/venmic/) project, notably used in Vesktop for audio streaming.
 
-### Built-in arRPC (Discord Rich Presence)
+### Built-in Discord Rich Presence
 
-Recar includes the [arRPC](https://arrpc.openasar.dev/) project directly in the client, meaning you can immediately start using Discord RPC.
+Recar includes the [dpprpc](https://codeberg.org/TheUnium/dpprpc) project directly in the client, meaning you can immediately start using Discord RPC.
 
 <video controls muted autoplay loop src="../../src/assets/media/arrpc.webm"></video>
 > *Demonstrated using the [music-discord-rpc](https://github.com/patryk-ku/music-discord-rpc/) project and [Elisa](https://apps.kde.org/elisa/)*
