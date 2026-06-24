@@ -28,6 +28,26 @@ For now this is the only way to disable overlay for specific applications.
 
 Recar does not properly ship and install overlay functionality by default. Install it from the developer page in settings assuming you are on an official build that should ship Recar Overlay. Also, make sure it is enabled under the Overlay section in the settings page.
 
+Please also note as of now Recar does not support OpenGL games and applications, we only support Vulkan. This includes older games running through even Proton as it may not use DXVK.
+
+##### Minecraft
+
+On versions above **26.2** use the Vulkan renderer option instead of OpenGL.
+Any versions below that (except the snapshots of 26.2), or if OpenGL is preferred use the following options:
+
+**1. VulkanMod**
+
+Introduces a Vulkan based rendering engine for Minecraft. Great option for this, but may fall back in mod compatibility.
+[Modrinth](https://modrinth.com/mod/vulkanmod)
+
+<img src="../../src/assets/media/vulkanmod.png"></img>
+
+**2. Zink**
+
+It is recommended to use Prism Launcher for this as it has the easiest way to enable Zink. This is the most mod compatible way to do this.
+
+<img src="../../src/assets/media/zinkmc.png"></img>
+
 ---
 
 idk we havent faced many issues lol

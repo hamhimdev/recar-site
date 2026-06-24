@@ -66,29 +66,82 @@ To build Recar from source, you'll need `nodejs`, `pnpm`, and `git`.
 
 <Steps>
 
-1. **Clone the repository**:
+1. Clone the repository
 
-    The `--recursive` flag is very important as [roverpp](https://codeberg.org/TheUnium/roverpp/) (Recar Overlay), [dpprpc](https://codeberg.org/TheUnium/dpprpc/), Equicord and Vencord are included as Git submodules.
+    The `--recursive` flag is very important as [roverpp](https://codeberg.org/TheUnium/roverpp/) (Recar Overlay), [dpprpc](https://codeberg.org/TheUnium/dpprpc/) (Recar's RPC Server), Equicord and Vencord are included as Git submodules.
 
     ```bash
     git clone --recursive https://codeberg.org/Loxodrome/recar.git
     cd recar
     ```
 
-2. **Install dependencies**:
+2. Install dependencies
 
     ```bash
     pnpm install
     ```
 
-3. **Build client mods**:
+3. Build client mods
 
     ```bash
     pnpm build:mods
     ```
 
-4. **Launch Recar**:
+4. If installing optional components, they require other native dependencies
+
+    apt: *Debian and its derivates (Mint, Ubuntu, Devuan)*
     ```bash
+    # Update package lists
+    sudo apt update
+
+    # Mandatory
+    sudo apt install build-essential
+  
+    # roverpp dependencies
+    sudo apt install vulkan-tools libvulkan-dev vulkan-validationlayers-dev glslang-tools python3
+    
+    # dpprpc dependencies
+    sudo apt install libwebsockets-dev rapidjson-dev
+    ```
+    ---
+    dnf: *Red Hat and its derivates (Fedora, CentOS, RHEL)*
+    ```bash
+    # Mandatory
+    sudo dnf groupinstall "Development Tools"
+
+    # roverpp dependencies
+    sudo dnf install vulkan-loader-devel vulkan-headers glslang python3
+    
+    # dpprpc optional dependencies
+    sudo dnf install libwebsockets-devel rapidjson-devel
+    ```
+    ---
+    xbps: *Void Linux*
+    ```bash
+    # Mandatory
+    sudo xbps-install -S base-devel
+    
+    # roverpp dependencies
+    sudo xbps-install -S vulkan-loader-devel vulkan-headers glslang python3
+
+    # dpprpc dependencies
+    sudo xbps-install -S libwebsockets-devel rapidjson
+    ```
+
+5. Build dpprpc and dpprpc
+
+    ```bash
+    pnpm build:projects
+    ```
+
+6. Launch or build Recar
+
+    ```bash
+    # Starts the Electron runtime directly
     pnpm start
+    ```
+    ```bash
+    # Builds .deb, .rpm, .AppImage and a .tar.gz tarball
+    pnpm build
     ```
 </Steps>
